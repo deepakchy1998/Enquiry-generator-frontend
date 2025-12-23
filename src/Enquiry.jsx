@@ -12,7 +12,7 @@ function Enquiry() {
   // Function to fetch all enquiries from the server
   const getAllEnquiries = () => {
     axios
-      .get("http://localhost:3000/api/web/enquiry/enquiries")
+      .get("https://enquiry-generator-backend.vercel.app/api/web/enquiry/enquiries")
       .then((response) => {
         console.log("Enquiries fetched successfully:", response.data);
         setEnquiryList(response.data);
@@ -60,7 +60,7 @@ function Enquiry() {
       // Send formData to the server using axios PUT request
       axios
         .put(
-          `http://localhost:3000/api/web/enquiry/edit/${_id}`,
+          `https://enquiry-generator-backend.vercel.app/api/web/enquiry/edit/${_id}`,
           payload
         )
         .then((response) => {
@@ -81,7 +81,7 @@ function Enquiry() {
     } else {
       // Send formData to the server using axios POST request
       axios
-        .post("http://localhost:3000/api/web/enquiry/insert", formData)
+        .post("https://enquiry-generator-backend.vercel.app/api/web/enquiry/insert", formData)
         .then((response) => {
           console.log("Form data submitted successfully:", response.data);
           toast.success("Enquiry submitted successfully!"); 

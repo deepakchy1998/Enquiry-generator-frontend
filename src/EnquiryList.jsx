@@ -14,7 +14,7 @@ const EnquiryList = ({ data, getAllEnquiries, setFormData }) => {
 
   // Function to handle deleting an enquiry
   const deleteData = (delid) => {
-    axios.delete(`http://localhost:3000/api/web/enquiry/delete/${delid}`)
+    axios.delete(`https://enquiry-generator-backend.vercel.app/api/web/enquiry/delete/${delid}`)
       .then((response) => {
         console.log("Enquiry deleted successfully:", response.data);  
         toast.success("Enquiry deleted successfully!");
@@ -28,7 +28,7 @@ const EnquiryList = ({ data, getAllEnquiries, setFormData }) => {
 
   // Function to handle editing an enquiry
   const editData = (editid) => {
-    axios.put(`http://localhost:3000/api/web/enquiry/edit/${editid}`)
+    axios.put(`https://enquiry-generator-backend.vercel.app/api/web/enquiry/edit/${editid}`)
     .then((response) => {
       setFormData(response.data);
       console.log("Enquiry edited successfully:", response.data);
